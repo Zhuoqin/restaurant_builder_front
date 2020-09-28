@@ -1,0 +1,19 @@
+Builder functionalities APIs
+
+/v1
+
+Get my landing
+[GET] {token}
+/landings/me
+
+[GET]
+/landings/me/features -> table list page -> 参考assignment 2 computer edit list
+ - add , delete, update
+
+[GET]
+/landings/me/menus -> table list page -> 参考assignment 2 computer edit list
+ - add , delete, update
+
+Update head section:
+[POST]
+/landings/me/head
