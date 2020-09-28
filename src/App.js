@@ -1,26 +1,58 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HeadSectionEdit from "./HeadSectionEdit";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const FAKE_DATA = {
+    headSection: {
+        title: 'Welcome to J',
+        description: 'Mobile Template',
+        backgroundURL: 'www.google.com/test.png'
+    },
+    featureSection: [
+        {
+            title: 'Free Wife',
+            iconUrl: '',
+        },
+        {
+            title: 'Free Wife',
+            iconUrl: '',
+        }
+    ],
+    menuSection: [
+        {
+            title: 'Delicious thick noodles',
+            price: 12,
+            backgroundURL: ''
+        },
+        {
+            title: 'Delicious thick noodles',
+            price: 45,
+            backgroundURL: ''
+        },
+        {
+            title: 'Delicious thick noodles',
+            price: 12,
+            backgroundURL: ''
+        }
+    ]
+};
+
+export class App extends React.Component {
+    render() {
+        return (
+            <div className="restaurant_page">
+                <HeadSectionEdit data={FAKE_DATA.headSection}/>
+                <hr/>
+                <div className='text-center mb-3'>
+                    <button className={'btn btn-primary'}>Edit Feature Section</button>
+                </div>
+                <hr/>
+                <div className='text-center mb-3'>
+                    <button className={'btn btn-primary'}>Edit Menu Section</button>
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
