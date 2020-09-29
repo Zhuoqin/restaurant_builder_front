@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HeadSectionEdit from "./HeadSectionEdit";
+import HeadSectionEdit from "./builder/HeadSectionEdit";
 
 const FAKE_DATA = {
     headSection: {
@@ -41,7 +41,7 @@ const FAKE_DATA = {
 export class App extends React.Component {
     render() {
         return (
-            <div className="restaurant_page">
+            <div className="restaurant_page landing_page">
                 <HeadSectionEdit data={FAKE_DATA.headSection}/>
                 <hr/>
                 <div className='text-center mb-3'>
