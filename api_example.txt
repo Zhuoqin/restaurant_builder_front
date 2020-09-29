@@ -17,3 +17,14 @@ Get my landing
 Update head section:
 [POST]
 /landings/me/head
+
+restaurant list page
+
+get all landings
+[GET]
+/landings
+landing display page
+
+get landing by id
+[GET]
+/landings/:id
