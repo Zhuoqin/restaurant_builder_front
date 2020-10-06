@@ -17,7 +17,8 @@ code {
 }
 
 /* section head */
-.landing_page .head {
+.landing_page.head {
+    height: 20vh;
 
 }
 
@@ -75,3 +76,5 @@ code {
 .landing_page .menu {
 
 }
+
+

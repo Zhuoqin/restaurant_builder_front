@@ -1,58 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import HeadSectionEdit from "./builder/HeadSectionEdit";
+import React, {Component} from 'react';
 
-const FAKE_DATA = {
-    headSection: {
-        title: 'Welcome to J',
-        description: 'Mobile Template',
-        backgroundURL: 'www.google.com/test.png'
-    },
-    featureSection: [
-        {
-            title: 'Free Wife',
-            iconUrl: '',
-        },
-        {
-            title: 'Free Wife',
-            iconUrl: '',
-        }
-    ],
-    menuSection: [
-        {
-            title: 'Delicious thick noodles',
-            price: 12,
-            backgroundURL: ''
-        },
-        {
-            title: 'Delicious thick noodles',
-            price: 45,
-            backgroundURL: ''
-        },
-        {
-            title: 'Delicious thick noodles',
-            price: 12,
-            backgroundURL: ''
-        }
-    ]
-};
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+} from "react-router-dom"
+import Landing from "./landing/Landing";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import Profile from "./Service/Profile";
 
-export class App extends React.Component {
-    render() {
-        return (
-            <div className="restaurant_page landing_page">
-                <HeadSectionEdit data={FAKE_DATA.headSection}/>
-                <hr/>
-                <div className='text-center mb-3'>
-                    <button className={'btn btn-primary'}>Edit Feature Section</button>
-                </div>
-                <hr/>
-                <div className='text-center mb-3'>
-                    <button className={'btn btn-primary'}>Edit Menu Section</button>
-                </div>
+
+function App(){
+    return(
+        <Router>
+            <div>
+                <Link to="/">Home</Link> {'    |    '}
+                <Link to="/register">Register </Link> {'    |    '}
+                <Link to="/login">Login </Link> {'    |    '}
+                <Link to="/users/me">Profile </Link> {'    |    '}
+
             </div>
-        );
-    }
-}
 
+            <Switch>
+                <Route path="/" exact>
+                   <Landing/>
+                </Route>
+
+                <Route path="/register">
+                    <Register/>
+                </Route>
+
+                <Route path="/login">
+                    <Login/>
+                </Route>
+                <Route path="/users/me">
+                    <Profile/>
+                </Route>
+
+            </Switch>
+        </Router>
+    )
+
+}
+export default App;

@@ -6,8 +6,10 @@ class HeadSection extends Component {
 
         return (
             <div>
-                <div className="content">
-                    <img src={data.backgroundURL} alt=""/>
+                <div className="container">
+<div className='header'>
+                    <img className="col 3" src={data.backgroundURL} alt=""/>
+</div>
                     <div className="caption">
                         <h2>{data.title}</h2>
                         <p>{data.description}</p>
