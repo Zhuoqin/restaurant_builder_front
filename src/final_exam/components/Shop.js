@@ -41,6 +41,11 @@ class Shop extends React.Component {
         // write code above
     };
 
+    // todo: feel free to add any extra method to assist your cart *
+
+
+    // write code above
+
     render() {
         const {items} = this.props;
         let subTotal = this.calculateTotal();
