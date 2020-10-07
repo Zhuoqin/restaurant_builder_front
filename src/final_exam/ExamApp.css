@@ -1,0 +1,82 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.shop_items .card {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    background: #fff;
+    text-align: left;
+    transition: translate .18s, box-shadow .18s;
+    transform: translateY(0);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.shop_items .card img {
+    margin-bottom: 10px;
+}
+
+.add_btn, .trash_btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.add_btn:focus, .trash_btn:focus {
+    outline: none;
+}
+
+.shop_items button:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+.cart_container .img_wrap {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+}
+
+.cart_container .img_wrap img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
