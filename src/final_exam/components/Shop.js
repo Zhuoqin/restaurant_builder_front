@@ -43,7 +43,7 @@ class Shop extends React.Component {
             sum += qualities * price;
         });
         if (coupon) {
-            sum -= coupon;
+            sum = coupon >= sum ? 0 : sum - coupon;
         }
         // write code above
         return sum;
