@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {App} from "./App";
-import Landing from "./landing/Landing";
+import ExamApp from "./final_exam/ExamApp";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Landing/>
+        <ExamApp/>
     </React.StrictMode>,
     document.getElementById('root')
 );
