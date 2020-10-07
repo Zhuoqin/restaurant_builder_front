@@ -21,8 +21,12 @@ class RightPanel extends React.Component {
                         <tbody id='shoppingCart'>
                         {
                             // todo: Q7 - write your answer to map items and quantities
-
-
+                            Object.keys(this.props.items).map(key => (
+                                <tr key={key}>
+                                    <td>{key}</td>
+                                    <td>{this.props.items[key]}</td>
+                                </tr>
+                            ))
                             // write code above
                         }
                         </tbody>
@@ -34,8 +38,8 @@ class RightPanel extends React.Component {
                         <select
                             id="demo-simple-select"
                             // todo: Q8 - write your answer to bind controlled select value and change event - hint: use callback from props
-
-
+                            value={this.props.coupon}
+                            onChange={this.props.onCouponChange}
                             // write code above
                         >
                             <option value={0}>NONE</option>
@@ -59,12 +63,12 @@ class RightPanel extends React.Component {
                         <tr id='taxRow'>
                             <td>Tax(13%)</td>
                             {/*  todo: Q9: write your answer to replace '???' and display the calculated tax amount like $ 13  */}
-                            <td>$ ???</td>
+                            <td>$ {(this.props.subTotal * TAX_RATE).toFixed(2)}</td>
                         </tr>
                         <tr id="totalPriceRow">
                             <td>Total Price</td>
                             {/*  todo: Q10: write your answer to replace '???' and display the calculated total amount like $ 113  */}
-                            <td>$ ???</td>
+                            <td>$ {(this.props.subTotal * (1 + TAX_RATE)).toFixed(2)}</td>
                         </tr>
                         </tbody>
                     </table>
