@@ -42,11 +42,11 @@ class Register extends Component {
                             "Content-Type": "application/json"
                         }
                     }).then(response => response.json()).then(response => {
-                        console.log(response);
+
                         alert(response.message);
                         if (response.result) {
                             this.setState({
-                                serverFeedback: response.result.message,
+                                serverFeedback: response.message,
                                 submitting: false,
                                 formValue: {
                                     ...response.result

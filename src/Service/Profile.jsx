@@ -130,7 +130,7 @@ class Profile extends Component {
                         <label className="userName">User Name</label>
                         <input type="text" placeholder="Enter User Name" name="username" id='userName'
                                value={username}
-                               readOnly={this.handleInputChange}
+                               onChange={this.handleInputChange}
                                className={`form-control ${error?.username ? "is-invalid" : "is-valid"}`}/>
                         {error.username && <div className="invalid-feedback">
                             {error.username}

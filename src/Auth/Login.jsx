@@ -38,10 +38,8 @@ class Login extends Component {
     handleFormSubmit = (event) => {
         console.log(this.state);
         event.preventDefault();
-        const error = this.validate(this.state);
+        const error = this.validate(this.state.formValue);
         if (isEmpty(error)) {
-            alert("no error")
-            alert(error)
             this.setState(
                 {
                     error: {}
@@ -53,12 +51,12 @@ class Login extends Component {
                             "Content-Type": "application/json"
                         }
                     }).then(response => response.json()).then(response => {
-                        console.log(response);
+                        console.log("response"+response.result);
                         alert(response.message);
                         if (response.result) {
                             localStorage.setItem("token", response.result)
                             this.setState({
-                                serverFeedback: response.result.message,
+                                serverFeedback: response.message,
                                 logged: true,
                             },()=>{
                                 this.props.history.push("/")
@@ -66,8 +64,9 @@ class Login extends Component {
                         } else {
                             this.setState({
                                 logged: false,
-                                serverFeedback: response.result.message
-                            });
+                                serverFeedback: response.message
+                            },()=>{
+                                this.props.history.push("/login")});
                         }
                     })
                 })
