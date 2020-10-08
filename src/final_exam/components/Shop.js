@@ -3,6 +3,16 @@ import RightPanel from './rightPanel';
 import LeftPanel from './leftPanel';
 
 class Shop extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            items:[],
+            quantity:"",
+            price:"",
+        };
+    }
+
     state = {
         // todo: Q1 - write your answer to init state
 
@@ -11,6 +21,11 @@ class Shop extends React.Component {
     };
 
     addItem = (item) => {
+        this.setState({
+            ...this.state,
+            items: this.items.addItem(item),
+
+        })
         // todo: Q2 - write your answer to add cart item
 
 
@@ -19,7 +34,11 @@ class Shop extends React.Component {
 
     removeItem = (item) => {
         // todo: Q3 - write your answer to remove cart item
+        this.setState({
+            ...this.state,
+            items: this.items.removeItem(item),
 
+        })
 
         // write code above
     };
