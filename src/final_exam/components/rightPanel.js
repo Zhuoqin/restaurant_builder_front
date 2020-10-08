@@ -21,6 +21,12 @@ class RightPanel extends React.Component {
                         <tbody id='shoppingCart'>
                         {
                             // todo: Q7 - write your answer to map items and quantities
+                            Object.keys(this.props.items).map(it => (
+                                this.props.items[it] !== 0?(<tr>
+                                    <td className="table-body">{it}</td>
+                                    <td className="table-body">{this.props.items[it]}</td>
+                                </tr>):(<></>)
+                            ))
 
 
                             // write code above

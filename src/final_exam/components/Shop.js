@@ -56,7 +56,9 @@ class Shop extends React.Component {
         // write code above
     };
 
+
     // todo: feel free to add any extra method to assist your cart *
+
 
 
     // write code above
@@ -75,6 +77,7 @@ class Shop extends React.Component {
                         <div className="col-12 col-md-6">
                             <RightPanel
                                 // todo: Q6 - write your answer to pass proper props/callbacks
+                                items={this.state.item}
 
                                 // write code above
                                 subTotal={subTotal}/>
