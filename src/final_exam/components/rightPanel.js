@@ -41,7 +41,7 @@ class RightPanel extends React.Component {
                             id="demo-simple-select"
                             // todo: Q8 - write your answer to bind controlled select value and change event - hint: use callback from props
 
-
+                            onChange={this.props.coupon}
                             // write code above
                         >
                             <option value={0}>NONE</option>
@@ -65,12 +65,12 @@ class RightPanel extends React.Component {
                         <tr id='taxRow'>
                             <td>Tax(13%)</td>
                             {/*  todo: Q9: write your answer to replace '???' and display the calculated tax amount like $ 13  */}
-                            <td>$ ???</td>
+                            <td>$ {this.props.tax}</td>
                         </tr>
                         <tr id="totalPriceRow">
                             <td>Total Price</td>
                             {/*  todo: Q10: write your answer to replace '???' and display the calculated total amount like $ 113  */}
-                            <td>$ ???</td>
+                            <td>$ {this.props.total}</td>
                         </tr>
                         </tbody>
                     </table>

@@ -14,7 +14,7 @@ class Shop extends React.Component {
         "scarf": 0,
         "sneakers": 0,
         "beanie": 0},
-        total: 0,
+        coupon: 0,
 
 
 
@@ -45,13 +45,29 @@ class Shop extends React.Component {
         })
 
         // write code above
-        return sum;
+        return sum * 1.13 - this.state.coupon;
+    }
+
+    calculateSubTotal() {
+        let sum = 0;
+        // todo: Q4 - write your answer to calculate the sum price
+        this.props.items.map(item => {
+            sum += item.price * this.state.item[item.name]
+        })
+
+        // write code above
+        return sum - this.state.coupon;
+    }
+
+    calculateTax(){
+        let sum = this.calculateSubTotal();
+        return sum * 0.13;
     }
 
     handleCouponChange = (event) => {
         // console.log(event)
         // todo: Q5 - write your answer to handle coupe select change
-
+        this.setState({coupon: event.target.value})
 
         // write code above
     };
@@ -65,7 +81,9 @@ class Shop extends React.Component {
 
     render() {
         const {items} = this.props;
-        let subTotal = this.calculateTotal();
+        let subTotal = this.calculateSubTotal().toFixed(2);
+        let tax = this.calculateTax().toFixed(2);
+        let total = this.calculateTotal().toFixed(2);
 
         return (
             <div>
@@ -77,10 +95,12 @@ class Shop extends React.Component {
                         <div className="col-12 col-md-6">
                             <RightPanel
                                 // todo: Q6 - write your answer to pass proper props/callbacks
+                                coupon={this.handleCouponChange}
                                 items={this.state.item}
-
                                 // write code above
-                                subTotal={subTotal}/>
+                                subTotal={subTotal}
+                                total={total}
+                                tax={tax}/>
                         </div>
                     </div>
                 </div>
