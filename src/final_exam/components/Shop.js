@@ -5,14 +5,24 @@ import LeftPanel from './leftPanel';
 class Shop extends React.Component {
     state = {
         // todo: Q1 - write your answer to init state
-
-
+        cap:0,
+        gloves: 0,
+        shirt:0,
+        coat:0,
+        skirt:0,
+        trousers:0,
+        scarf:0,
+        sneakers:0,
+        beanie:0
         // write code above
     };
 
     addItem = (item) => {
         // todo: Q2 - write your answer to add cart item
-
+        this.setState({
+            ...this.state,
+            cap: item.heading
+        })
 
         // write code above
     };
